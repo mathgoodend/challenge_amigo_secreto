@@ -1,6 +1,5 @@
 // Inicializa o array da lista de nomes dos envolvidos no amigo secreto
 const amigos = [];
-console.log(lista);
 
 /* 
 *   Função adicionarAmigo()
@@ -14,6 +13,7 @@ console.log(lista);
 */
 function adicionarAmigo() {
     const amigo = document.getElementById('amigo');
+
     if (amigo.value.length == 0 || amigo.value.trim() == "") {
         amigo.value = "";
         alert("Por favor, insira um nome.");
@@ -21,7 +21,7 @@ function adicionarAmigo() {
         amigos.push(amigo.value);
         amigo.value = "";
     }
-    console.log(amigos);
+
     atualizarListaAmigos();
 }
 
@@ -38,12 +38,10 @@ function atualizarListaAmigos() {
     const lista = document.getElementById('listaAmigos');
     const e = document.createElement('li');
 
-    console.log(lista);
     for (let i = 0; i < amigos.length; i++) {
         e.innerHTML = amigos[i];
         lista.appendChild(e);
     }
-    console.log(lista);
 }
 
 /*
@@ -86,7 +84,4 @@ function sortearAmigo() {
         r.innerHTML = amigos[sortearNumero(amigos.length)];
         resultado.appendChild(r);
     }
-
-    console.log(resultado);
-    console.log(r);
 }
